@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from "react";
-import styled from "styled-components";
-import { useHistory } from "react-router-dom";
-import { MovieState } from "../MovieState";
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
+import { MovieState } from '../MovieState';
+// animation
+import { motion } from 'framer-motion';
+import { pageAnimation } from '../animation';
 
 const MovieDetail = () => {
   const history = useHistory();
@@ -18,10 +21,14 @@ const MovieDetail = () => {
   return (
     <>
       {movie && (
-        <Details>
+        <Details
+          variants={pageAnimation}
+          initial='hidden'
+          animate='show'
+          exit='exit'>
           <HeadLine>
             <h2>{movie.title}</h2>
-            <img src={movie.mainImg} alt="movie" />
+            <img src={movie.mainImg} alt='movie' />
           </HeadLine>
           <Awards>
             {movie.awards.map((award) => (
@@ -33,7 +40,7 @@ const MovieDetail = () => {
             ))}
           </Awards>
           <ImageDisplay>
-            <img src={movie.secondaryImg} alt="movie" />
+            <img src={movie.secondaryImg} alt='movie' />
           </ImageDisplay>
         </Details>
       )}
@@ -41,7 +48,7 @@ const MovieDetail = () => {
   );
 };
 
-const Details = styled.div`
+const Details = styled(motion.div)`
   color: white;
 `;
 const HeadLine = styled.div`
@@ -87,7 +94,7 @@ const ImageDisplay = styled.div`
   img {
     width: 100%;
     height: 100vh;
-    
+
     object-fit: cover;
   }
 `;
@@ -97,7 +104,7 @@ const Award = ({ title, description }) => {
   return (
     <AwardStyle>
       <h3>{title}</h3>
-      <div className="line"></div>
+      <div className='line'></div>
       <p>{description}</p>
     </AwardStyle>
   );
