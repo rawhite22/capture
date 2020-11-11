@@ -2,6 +2,9 @@ import React from 'react';
 import home1 from '../img/home1.png';
 // styles
 import {About,Description,ImgContainer,Hide} from '../styles'
+// animation
+import {motion} from 'framer-motion'
+
 
 
 const AboutSection = () => {
