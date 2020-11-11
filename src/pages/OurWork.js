@@ -9,30 +9,50 @@ import theracer from '../img/theracer-small.png';
 import goodtimes from '../img/goodtimes-small.png';
 // animations
 import { motion } from 'framer-motion';
-import { pageAnimation } from '../animation';
+import {
+  pageAnimation,
+  photoAnimation,
+  fade,
+  lineAnimation,
+  slider,
+  sliderContainer,
+} from '../animation';
 
 const OurWork = () => {
   return (
-    <Work variants={pageAnimation} initial='hidden' animate='show' exit='exit' style={{background:'#fff'}}>
+    <Work
+      variants={pageAnimation}
+      initial='hidden'
+      animate='show'
+      exit='exit'
+      style={{ background: '#fff' }}>
+      <motion.div variants={sliderContainer}>
+        <Frame1 variants={slider} />
+        <Frame2 variants={slider} />
+        <Frame3 variants={slider} />
+        <Frame4 variants={slider} />
+      </motion.div>
       <Movie>
-        <h2>The Athlete</h2>
-        <div className='line'></div>
+        <motion.h2 variants={fade}>The Athlete</motion.h2>
+        <motion.div variants={lineAnimation} className='line'></motion.div>
         <Link to='/work/the-athlete'>
-          <img src={athlete} alt='Athlete' />
+          <Hide>
+            <motion.img variants={photoAnimation} src={athlete} alt='Athlete' />
+          </Hide>
         </Link>
       </Movie>
       <Movie>
-        <h2>The Racer</h2>
-        <div className='line'></div>
+        <motion.h2 variants={fade}>The Racer</motion.h2>
+        <motion.div className='line'></motion.div>
         <Link to='/work/the-racer'>
-          <img src={theracer} alt='Racer' />
+          <motion.img variants={photoAnimation} src={theracer} alt='Racer' />
         </Link>
       </Movie>
       <Movie>
-        <h2>Goodtimes</h2>
-        <div className='line'></div>
+        <motion.h2 variants={fade}>Goodtimes</motion.h2>
+        <motion.div className='line'></motion.div>
         <Link to='/work/good-times'>
-          <img src={goodtimes} alt='Athlete' />
+          <motion.img variants={photoAnimation} src={goodtimes} alt='Athlete' />
         </Link>
       </Movie>
     </Work>
@@ -52,7 +72,7 @@ const Movie = styled.div`
   padding-bottom: 10rem;
   .line {
     height: 0.5rem;
-    background: #cccccc;
+    background: #23d997;
     margin-bottom: 3rem;
   }
   img {
@@ -60,6 +80,30 @@ const Movie = styled.div`
     height: 70vh;
     object-fit: cover;
   }
+`;
+
+const Hide = styled.div`
+  overflow: hidden;
+`;
+
+//Frame Animation
+const Frame1 = styled(motion.div)`
+  position: fixed;
+  left: 0;
+  top: 10%;
+  width: 100%;
+  height: 100vh;
+  background-color: #fffebf;
+  z-index: 2;
+`;
+const Frame2 = styled(Frame1)`
+  background-color: #ff8efb;
+`;
+const Frame3 = styled(Frame1)`
+  background-color: #8ed2ff;
+`;
+const Frame4 = styled(Frame1)`
+  background-color: #8effa0;
 `;
 
 export default OurWork;
