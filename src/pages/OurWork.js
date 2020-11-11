@@ -19,6 +19,7 @@ import {
 } from '../animation';
 // hooks
 import { UseScroll } from '../components/UseScroll';
+import ScrollTop from '../components/ScrollTop';
 
 const OurWork = () => {
   const [element, controls] = UseScroll();
@@ -63,6 +64,7 @@ const OurWork = () => {
           <motion.img src={goodtimes} alt='Athlete' />
         </Link>
       </Movie>
+      <ScrollTop />
     </Work>
   );
 };
