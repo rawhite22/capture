@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import {About} from '../styles'
+import { About } from '../styles';
+import Toggle from '../components/Toggle';
 
 const FaqSection = () => {
   return (
@@ -17,7 +18,7 @@ const FaqSection = () => {
             Necessitatibus, neque.
           </p>
         </div>
-        <div className="faq-line"></div>
+        <div className='faq-line'></div>
       </div>
       <div className='question'>
         <h4>Daily Schedule</h4>
@@ -28,7 +29,7 @@ const FaqSection = () => {
             Necessitatibus, neque.
           </p>
         </div>
-        <div className="faq-line"></div>
+        <div className='faq-line'></div>
       </div>
       <div className='question'>
         <h4>Diferrent Payment Methods</h4>
@@ -39,7 +40,7 @@ const FaqSection = () => {
             Necessitatibus, neque.
           </p>
         </div>
-        <div className="faq-line"></div>
+        <div className='faq-line'></div>
       </div>
       <div className='question'>
         <h4>What Products do you offer.</h4>
@@ -50,7 +51,7 @@ const FaqSection = () => {
             Necessitatibus, neque.
           </p>
         </div>
-        <div className="faq-line"></div>
+        <div className='faq-line'></div>
       </div>
     </Faq>
   );
@@ -59,17 +60,17 @@ const FaqSection = () => {
 const Faq = styled(About)`
   display: block;
   span {
-    display:block;
+    display: block;
   }
   h2 {
-    font-weight:lighter;
-    padding-bottom: 2rem
+    font-weight: lighter;
+    padding-bottom: 2rem;
   }
   .faq-line {
-    background:#cccccc;
-    height:0.2rem;
+    background: #cccccc;
+    height: 0.2rem;
     margin: 2rem 0rem;
-    width:100%;
+    width: 100%;
   }
   .question {
     padding: 3rem 0rem;
@@ -78,7 +79,7 @@ const Faq = styled(About)`
   .answer {
     padding: 2rem 0rem;
     p {
-      padding: 1rem 0rem
+      padding: 1rem 0rem;
     }
   }
 `;
