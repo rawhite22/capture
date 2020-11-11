@@ -44,7 +44,7 @@ export const photoAnimation = {
 
 export const lineAnimation = {
   hidden: { width: '0%' },
-  show: { width: '100%', transition: { delay: 1.1, duration: 0.75 } },
+  show: { width: '100%', transition: { duration: 1 } },
 };
 
 export const slider = {
@@ -61,7 +61,7 @@ export const slider = {
 
 export const sliderContainer = {
   hidden: { opacity: 1 },
-  show: { opacity: 1, transition: { staggerChildren: 0.2, ease: 'easeOut' } },
+  show: { opacity: 1, transition: { staggerChildren: 0.15, ease: 'easeOut' } },
 };
 
 export const scrollReveal = {
