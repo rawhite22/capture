@@ -1,10 +1,13 @@
 import React from 'react';
+// images
 import home1 from '../img/home1.png';
 // styles
 import { About, Description, ImgContainer, Hide } from '../styles';
 // animation
 import { motion } from 'framer-motion';
 import { titleAnimation, fade, photoAnimation } from '../animation';
+// svg
+import Wave from './Wave';
 
 const AboutSection = () => {
   return (
@@ -36,6 +39,7 @@ const AboutSection = () => {
           alt='Guy holding a camera'
         />
       </ImgContainer>
+      <Wave />
     </About>
   );
 };
